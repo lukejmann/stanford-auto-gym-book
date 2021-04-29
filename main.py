@@ -16,7 +16,8 @@ wait.until(EC.visibility_of_element_located(
 while(1 == 1):
     curr_time = time.localtime()
     curr_clock = time.strftime("%H:%M:%S", curr_time)
-    if(curr_clock == "00:00"):
+    print(curr_clock)
+    if(curr_clock[0:5] == "00:00"):
         print("running!")
         driver.get('https://recwell.stanford.edu/booking')
         text_lines = driver.find_elements_by_xpath(
